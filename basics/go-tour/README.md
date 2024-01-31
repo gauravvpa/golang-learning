@@ -100,3 +100,34 @@
 	arr5 := [2][2]int{{1, 2}, {3, 4}} 
 	```
 - Array's length can be obtained from `len` function
+- Array's are copied by value not by reference.Same hold true when arrays are passed into function
+
+### Slices [Sample Code](https://github.com/gauravvpa/golang-learning/blob/main/basics/go-tour/slices.go)
+- Slices are dynamically sized data structure
+- Slices can be create by following ways
+	```
+	//1. From Existing Array
+	arr := [5]int{1, 4, 9, 16, 25}
+	slice1 := arr[0:3]
+	
+	//2.Literal
+	slice2 := []string{"C", "C++", "Java", "Go", "Python"}
+	
+	//3.From another slice
+	slice3 := slice2[:2]
+	
+	// 4. make function make(Type, Length, Capacity)
+	slice4 := make([]float32, 3)
+	```
+- When slices are created from arrays using the indices `arr[low: high]` slice includes the first element, but excludes the last one.
+When any index is not present, then the default is zero for the low bound and the length of the slice for the high bound
+  ```
+  arr := [6]int{}
+  slice1 := arr[1:4] // slice contains the elements from 1st index to 3rd index
+  slice2 := arr[:2] // slice contains first two elements
+  slice3 := arr[2:] // slice contains all elements except first two
+  ```
+- Slices are reference to the arrays. Changing the elements of a slice modifies the corresponding elements of its underlying array [Sample Code](https://github.com/gauravvpa/golang-learning/blob/main/basics/go-tour/slices.go#L54)
+- `len(slice)` - The length of a slice is the number of elements it contains
+- `cap(s)` - The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice.
+- `append(s)` - Add new elements to slice
