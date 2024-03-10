@@ -131,3 +131,36 @@ When any index is not present, then the default is zero for the low bound and th
 - `len(slice)` - The length of a slice is the number of elements it contains
 - `cap(s)` - The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice.
 - `append(s)` - Add new elements to slice
+
+### Map [Sample Code](https://github.com/gauravvpa/golang-learning/blob/main/basics/go-tour/map.go)
+- Map is a data structure where we store data as key value pairs
+- Map can be create in following ways
+```
+// Nil map , you can not add key to nil maps
+var nilMap map[string]string
+
+// empty map (non-nil map)
+map1 := make(map[string]string)
+
+map2: = map[string]string{
+	"Alex":"Alice"
+}
+```
+- Like in other Programming Languages, we can use square notation to access or add a key in a map
+```
+sample:= make(map[string]string)
+
+// add
+sample["alex"] = "alice"
+
+// update
+sample["alex"] = "bob"
+
+// delete a key
+delete(sample, "random")
+
+// check if a particular key exist
+key, ok := sample["randomkey"]
+// ok will be true if key exist
+```
+- [Map Iteration](https://github.com/gauravvpa/golang-learning/blob/main/basics/go-tour/map.go#L47)
